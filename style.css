@@ -1,0 +1,158 @@
+/* DEFAULT STYLE RESET */
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* END OF DEFAULT STYLE RESET */
+
+/* MODAL*/
+
+.modal {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  z-index: 2;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: auto;
+  background-color: rgba(20,0,20,0.6);
+}
+
+#modal-content {
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  height: calc(0.75*var(--grid-size));
+  width: calc(1.2*var(--grid-size));
+  border-radius: 24px;
+  background-color: var(--fuschia);
+  color: var(--dark-pink);
+  font-size: 3rem;
+  font-weight: 900;
+  border: none;
+  text-align: center;
+  line-height: 1.5;
+}
+
+#content.modal-open {
+  filter: blur(10px);
+  z-index: 1;
+  object-fit: contain;
+}
+
+/*END OF MODAL*/
+
+* {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+:root {
+    --grid-size: 360px;
+    --dark-pink: rgba(70, 0, 70, 1);
+    --darker-pink: rgb(37, 0, 37);
+    --fuschia: rgba(247, 7, 118, 1);
+}
+
+#content {
+  display: grid;
+  grid-template-rows: 80px 1fr;
+  height: 100vh;
+  width: 100vw;
+}
+
+#header {
+  height: 80px;
+  background-color: var(--dark-pink);
+  color: var(--fuschia);
+  font-size: 3rem;
+  font-weight: 900;
+}
+
+.flex-h {
+    display: flex;
+}
+
+.flex-h {
+  display: flex;
+  flex-direction: column;
+}
+
+.flex-center {
+    justify-content: center;
+    align-items: center;
+}
+
+.dark-bg {
+  background-color: var(--darker-pink);
+}
+
+#gameboard-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    background-color: var(--dark-pink);
+    border-radius: 24px;
+    color: var(--fuschia);
+    font-size: 4rem;
+    font-weight: 900;
+    width: var(--grid-size);
+    height: var(--grid-size);
+}
+
+/* Add right borders to all items except for the last column */
+.grid-item:not(:nth-child(3n)) {
+  border-right: 3px solid var(--fuschia);
+}
+
+/* Add bottom borders to all items except for the last row */
+.grid-item:not(:nth-child(n+7)) {
+  border-bottom: 3px solid var(--fuschia);
+}
